@@ -34,9 +34,9 @@ sudo hcitool -i hci0 cmd 0x08 0x000a 01
   * Start of iBeacon data
     * 02 # Byte 0 of iBeacon advertisement indicator
     * 15 # Byte 1 of iBeacon advertisement indicator (Apple specific, maybe defining the message type as “iBeacon” and it length (0x15 = 21 bytes = 16+4+4+1))
-    * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 - iBeacon broadcasting Profile UUID (16 octets)
-    * 00 00 - for iBeacon minor number (0)
-    * 00 00 - for iBeacon major number (0)
+    * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 - iBeacon broadcasting Profile UUID (16 octets (x8bits) = 128bit)
+    * 00 00 - for iBeacon minor number (16bit)
+    * 00 00 - for iBeacon major number (16bit)
     * c5 - 2’s complement of measured TX power
 
 Some information referrenced from [here](http://stackoverflow.com/questions/18906988/what-is-the-ibeacon-bluetooth-profile)
