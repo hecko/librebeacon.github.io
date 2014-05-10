@@ -1,0 +1,10 @@
+# Site settings
+title: LibreBeacon - open implementation of iBeacon and BLE resource site
+email: m@blava.net
+description: "LibreBeacon is a site for creating and documenting an open reference design for Apple's iBeacon technology."
+baseurl: ""
+url: "http://librebeacon.github.io/"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
