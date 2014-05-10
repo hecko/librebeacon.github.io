@@ -30,7 +30,8 @@ Board needs to be powered while being programmed using battery or in parallel wi
 
 ### Battery considerations
 
-nRF51822 uses about 55uA when in sleep mode and about 11mA when broadcasting iBeacon packets at 0dBm (1mW) transmit power. CR2032 battery has about 200mAh capacity.
+nRF51822 uses about 11mA when broadcasting iBeacon packets at 0dBm (1mW) transmit power. 
+Transmitting iBeacon every 500ms the average power usage is ~55uA; using CR2032 battery with 220mAh capacity the estimated theoretical battery life is about 4000 hours = 6 months.
 
 ### TX (transmit) power vs power use
 

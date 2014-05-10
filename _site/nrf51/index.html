@@ -39,15 +39,17 @@
         
           <a class="page-link" href="/about/">About the project</a>
         
-          <a class="page-link" href="/contact/">Contacts</a>
-        
           <a class="page-link" href="/feed.xml"></a>
+        
+          <a class="page-link" href="/ibeacon_packet/">iBeacon packet</a>
         
           <a class="page-link" href="/"></a>
         
           <a class="page-link" href="/nrf51/">nRF51 based design</a>
         
           <a class="page-link" href="/rf/">RF considerations</a>
+        
+          <a class="page-link" href="/ibeacon_simulation/">iBeacon simulation</a>
         
       </div>
     </nav>
@@ -92,7 +94,8 @@
 
 <h3 id="battery-considerations">Battery considerations</h3>
 
-<p>nRF51822 uses about 55uA when in sleep mode and about 11mA when broadcasting iBeacon packets at 0dBm (1mW) transmit power. CR2032 battery has about 200mAh capacity.</p>
+<p>nRF51822 uses about 11mA when broadcasting iBeacon packets at 0dBm (1mW) transmit power. 
+Transmitting iBeacon every 500ms the average power usage is ~55uA; using CR2032 battery with 220mAh capacity the estimated theoretical battery life is about 4000 hours = 6 months.</p>
 
 <h3 id="tx-transmit-power-vs-power-use">TX (transmit) power vs power use</h3>
 

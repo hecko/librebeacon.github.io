@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LibreBeacon - open implementation of iBeacon and BLE resource site</title>
-    <description>LibreBeacon is a site for creating and documenting an open reference design for Apple&#39;s iBeacon technology.</description>
+    <description>LibreBeacon is a site for creating and documenting an open reference design for Apple's iBeacon technology.</description>
     <link>http://librebeacon.github.io//</link>
     <atom:link href="http://librebeacon.github.io//feed.xml" rel="self" type="application/rss+xml" />
     
