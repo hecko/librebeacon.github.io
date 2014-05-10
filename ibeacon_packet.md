@@ -6,6 +6,8 @@ permalink: /ibeacon_packet/
 
 ### iBeacon packet disection
 
+iBeacon packet is a standard Bluetooth 4 advertisement packet with a specific format of manufacturers data field
+
 creating iBeacon packet in Linux using tools from [BlueZ Bluetooth protocol stack](http://www.bluez.org/)
 
 {% highlight bash %}

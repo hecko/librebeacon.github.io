@@ -29,10 +29,10 @@ The second hcitool command (0x08 0x0006) is "LE Set Advertising Parameters. The 
 
 The third hcitool command (0x08 0x000a) is "LE Set Advertise Enable". It is necessary to issue this command with hcitool instead of hciconfig, because "hciconfig hci0 leadv 3" will automatically set the advertising rate to the slower default of 1280ms.
 
-    * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 - iBeacon broadcasting Profile UUID (16 octets)
-    * 00 00 - for iBeacon minor number (0)
-    * 00 00 - for iBeacon major number (0)
-    * c5 - 2’s complement of measured TX power
+  * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 - iBeacon broadcasting Profile UUID (16 octets)
+  * 00 00 - for iBeacon minor number (0)
+  * 00 00 - for iBeacon major number (0)
+  * c5 - 2’s complement of measured TX power
 
 ## Picking up iBeacons in Linux
 
