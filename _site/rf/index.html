@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LibreBeacon - open implementation of iBeacon and BLE resource site</title>
+    <title>RF considerations</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="LibreBeacon is a site for creating and documenting an open reference design for Apple's iBeacon technology.">
-    <link rel="canonical" href="http://librebeacon.github.io//">
+    <link rel="canonical" href="http://librebeacon.github.io//rf/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -59,23 +59,43 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>RF considerations</h1>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">May 10, 2014</span>
-        <a class="post-link" href="/update/2014/05/10/page_up/">Welcome to LibreBeacon!</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <p>BLE uses 40 channels in 2.45GHz ISM band</p>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>Bluetooth LE defines three channels to be used in 2.4GHz spectrum as advertisement channels. These are:</p>
+
+<ul>
+  <li>2402 MHz (chan. 37), 2426MHz (chan 38), 2480 MHz (chan 39)</li>
+</ul>
+
+<p>There are another 37 channels to be used for BLE traffic - 0-36 with 2MHz channel width:</p>
+
+<ul>
+  <li>ch 37 2402MHz(adv)</li>
+  <li>ch 0-10 2404-2424MHz</li>
+  <li>ch 38 2426MHz (adv)</li>
+  <li>ch 11-36 2428-2478MHz</li>
+  <li>ch 39 2480MHz (adv)</li>
+</ul>
+
+<h3 id="tx-power">TX power</h3>
+
+<p>iPhone 5S uses BCM43342 Bluetooth radio chip - what is its sensitivity (so we can calculate theoretical distance for beacon distance)? But the chip is claimed to be Class 1 TX: Class 1 radios – used primarily in industrial use cases – have a range of ~100 meters. <a href="http://www.broadcom.com/products/Wireless-LAN/802.11-Wireless-LAN-Solutions/BCM4334">Broadcom</a></p>
+
+<ul>
+  <li>0dBm = 1mW</li>
+  <li>4dBm = 2.5mW</li>
+</ul>
+
+  </article>
 
 </div>
-
       </div>
     </div>
 

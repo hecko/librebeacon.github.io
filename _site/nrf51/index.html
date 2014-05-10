@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LibreBeacon - open implementation of iBeacon and BLE resource site</title>
+    <title>nRF51 based design</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="LibreBeacon is a site for creating and documenting an open reference design for Apple's iBeacon technology.">
-    <link rel="canonical" href="http://librebeacon.github.io//">
+    <link rel="canonical" href="http://librebeacon.github.io//nrf51/">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -59,23 +59,55 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div class="home">
+      <div class="post">
 
-  <h1>Posts</h1>
+  <header class="post-header">
+    <h1>nRF51 based design</h1>
+  </header>
 
-  <ul class="posts">
-    
-      <li>
-        <span class="post-date">May 10, 2014</span>
-        <a class="post-link" href="/update/2014/05/10/page_up/">Welcome to LibreBeacon!</a>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+  <h3 id="introduction">Introduction</h3>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>nRF51822 is one of the great little Bluetooth 4-enabled SoC chips. It is made by <a href="http://www.nordicsemi.com/">Nordic Semiconductor</a> and is widely available.</p>
+
+<p>nRF51822 does not need any special hardware to implement iBeacon advertisement packets, just a specific format of the advertisement packet needs to be constructed by firmware.</p>
+
+<h3 id="schematics">Schematics</h3>
+
+<p>To be added soom.</p>
+
+<h3 id="firmware">Firmware</h3>
+
+<p>To be added soon.</p>
+
+<h3 id="flashing-the-firmware">Flashing the firmware</h3>
+
+<p>To flast nRF51822 you will have to get the Segger programmer which is a part of the nRF51822 Development Kit (nRF51822-DK). Only two pins are needed to program the chip - GND, VCC, SWDIO and SWCLK. SWDIO pin is also called nRESET pin.</p>
+
+<p>Segger programmer in Nordic development kit uses 9-pin 0.05’’ Samtec FTSH connector as defined by ARM. This is slightly problematic, but you can use four wires to directly wire from the female connector to the pins on LibreBeacon board.</p>
+
+<p><img src="http://www.segger.com/cms/admin/uploads/imageBox/J-Link_9-pin_Cortex-M_Adapter.png" alt="programming header" /></p>
+
+<p>Board needs to be powered while being programmed using battery or in parallel with power source attached to GND and VCC leads rom the programmer to the board.</p>
+
+<h3 id="battery-considerations">Battery considerations</h3>
+
+<p>nRF51822 uses about 55uA when in sleep mode and about 11mA when broadcasting iBeacon packets at 0dBm (1mW) transmit power. CR2032 battery has about 200mAh capacity.</p>
+
+<h3 id="tx-transmit-power-vs-power-use">TX (transmit) power vs power use</h3>
+
+<p>Accepted transmit power values for nRF51822 are:
+-40, -30, -20, -16, -12, -8, -4, 0, and 4 dBm
+-40 is actually -30 as defined by nRF51 documentation</p>
+
+<p>From lowest, to highest. Default is 0dBm (1mW). 4dBm is ~2.5mW of TX power.</p>
+
+<p>Power use at different TX settings:
+0dBm -&gt; ~11mA</p>
+
+  </article>
 
 </div>
-
       </div>
     </div>
 
