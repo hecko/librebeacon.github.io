@@ -1,0 +1,13 @@
+---
+layout: page
+title: TODO
+permalink: /todo/
+---
+
+TODO for LibreBeacon project
+
+= website
+
+* use iPhone as iBeacon transmitter (simulation)
+* use Android phone as iBeacon transmitter (simulation)
+* check BlueZ version
