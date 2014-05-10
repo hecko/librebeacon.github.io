@@ -8,6 +8,6 @@ TODO for LibreBeacon project
 
 = website
 
-* use iPhone as iBeacon transmitter (simulation)
-* use Android phone as iBeacon transmitter (simulation)
-* check BlueZ version
+  * use iPhone as iBeacon transmitter (simulation)
+  * use Android phone as iBeacon transmitter (simulation)
+  * check BlueZ version
