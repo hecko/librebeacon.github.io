@@ -10,6 +10,7 @@ permalink: /ibeacon_packet/
 [BlackHat-Ryan](https://media.blackhat.com/us-13/us-13-Ryan-Bluetooth-Smart-The-Good-The-Bad-The-Ugly-and-The-Fix.pdf)
 
 Example adv. packet:
+
   * xx                # Preamble (1 octet)
   * d6 be 89 8e       # address - allways the same for advertisement packets (6.B.2.1.2 Bluetooth Spec.)
   * PDU
