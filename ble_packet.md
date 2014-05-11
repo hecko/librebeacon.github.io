@@ -4,6 +4,20 @@ title: iBeacon packet
 permalink: /ibeacon_packet/
 ---
 
+### Traditional Bluetooth 4 advertisement packet
+
+[Bluetooth Core Specification](https://www.bluetooth.org/en-us/specification/adopted-specifications)
+[BlackHat-Ryan](https://media.blackhat.com/us-13/us-13-Ryan-Bluetooth-Smart-The-Good-The-Bad-The-Ugly-and-The-Fix.pdf)
+
+Example adv. packet:
+  * xx                # Preamble (1 octet)
+  * d6 be 89 8e       # address - allways the same for advertisement packets (6.B.2.1.2 Bluetooth Spec.)
+  * PDU
+    * 00 11             # ADV_IND adv PDU type - type of adv. packet (6.B.2.3 Bluetooth Spec.)
+    * 99 92 b1 eb d7 90 # AdvA (6.B.2.3)
+    * 02 01 05 07 02 03 18 02 18 04 18 # AdvData - In this example its capabilities and three UUIDs the device provides.
+  * a8 5d ef          # crc data 3 octets
+
 ### iBeacon packet disection
 
 iBeacon packet is a standard Bluetooth 4 advertisement packet with a specific format of manufacturers data field
@@ -33,10 +47,10 @@ sudo hcitool -i hci0 cmd 0x08 0x000a 01
   * 4C 00 # Company identifier code (0x004C == Apple)
   * Start of iBeacon data
     * 02 # Byte 0 of iBeacon advertisement indicator
-    * 15 # Byte 1 of iBeacon advertisement indicator (Apple specific, maybe defining the message type as “iBeacon” and it length (0x15 = 21 bytes = 16+4+4+1))
-    * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 - iBeacon broadcasting Profile UUID (16 octets (x8bits) = 128bit)
-    * 00 00 - for iBeacon minor number (16bit)
-    * 00 00 - for iBeacon major number (16bit)
-    * c5 - 2’s complement of measured TX power
+    * 15 # length of uuid + major + minor + TX power lvl (0x15 = 21 bytes = 16+2+2+1)
+    * E2 C5 6D B5 DF FB 48 D2 B0 60 D0 F5 A7 10 96 E0 # iBeacon broadcasting Profile UUID (16 octets/bytes (x8bits) = 128bit)
+    * 00 00 # for iBeacon minor number (16bit)
+    * 00 00 # for iBeacon major number (16bit)
+    * c5 # 2’s complement of measured TX power lvl (RSSI at one meter) (0xC5 = 197, 2’s complement = 256-197 = -59 dBm)
 
 Some information referrenced from [here](http://stackoverflow.com/questions/18906988/what-is-the-ibeacon-bluetooth-profile)
