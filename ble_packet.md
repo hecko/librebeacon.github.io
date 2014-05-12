@@ -4,10 +4,10 @@ title: iBeacon packet
 permalink: /ibeacon_packet/
 ---
 
-### Traditional Bluetooth 4 advertisement packet
+### Bluetooth 4 advertisement packet + LibreBeacon specifics
 
-[Bluetooth Core Specification](https://www.bluetooth.org/en-us/specification/adopted-specifications)
-[BlackHat-Ryan](https://media.blackhat.com/us-13/us-13-Ryan-Bluetooth-Smart-The-Good-The-Bad-The-Ugly-and-The-Fix.pdf)
+  * [Bluetooth Core Specification](https://www.bluetooth.org/en-us/specification/adopted-specifications)
+  * [BlackHat-Ryan](https://media.blackhat.com/us-13/us-13-Ryan-Bluetooth-Smart-The-Good-The-Bad-The-Ugly-and-The-Fix.pdf)
 
 Example adv. packet (6.B.2.1 [Bluetooth Core Specification]) (data packets are very similar, but this description only applies to advetisement packets):
 
@@ -51,9 +51,9 @@ Example adv. packet (6.B.2.1 [Bluetooth Core Specification]) (data packets are v
 
 creating iBeacon packet in Linux using tools from [BlueZ Bluetooth protocol stack](http://www.bluez.org/)
 
-UUID:      t3st2343 (74337374-3233-3433-0000-000000000000)
-Major no.: 0        (0000)
-Minor no.: 0        (0000)
+  * UUID:      t3st2343 (74337374-3233-3433-0000-000000000000)
+  * Major no.: 0        (0000)
+  * Minor no.: 0        (0000)
 
 {% highlight bash %}
 sudo hciconfig hci0 up
